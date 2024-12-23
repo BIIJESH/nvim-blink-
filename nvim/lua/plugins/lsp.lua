@@ -58,7 +58,7 @@ return {
 			},
 		},
 		config = function(_, opts)
-			local capabilities = require("blink.cmp").get_lsp_capabilities() -- Check for correct name
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilites = capabilites })
 			local mason_lspconfig = require("mason-lspconfig")
@@ -159,18 +159,29 @@ return {
 			},
 			keymap = {
 				preset = "default",
-				["<Enter>"] = { "accept", "fallback" }, -- Map Enter to accept the completion/snippet
-				["<Tab>"] = { "select_next" }, -- Navigate down
-				["<S-Tab>"] = { "select_prev" }, -- Navigate up
+				["<Enter>"] = { "accept", "fallback" },
+				["<Tab>"] = { "select_next" },
+				["<S-Tab>"] = { "select_prev" },
 			},
 			completion = {
-				documentation = { auto_show = true },
+				menu = { border = "single" },
+				documentation = {
+					window = {
+						border = "single",
+					},
+					auto_show = true,
+				},
 				trigger = {
 					show_in_snippet = true,
+					show_on_trigger_character = true,
 				},
-				ghost_text = { enabled = true },
+				-- ghost_text = { enabled = true },
 			},
-			signature = { enabled = true },
+			signature = {
+				window = {
+					border = "single",
+				},
+			},
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
 				cmdline = {},

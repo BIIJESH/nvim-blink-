@@ -14,8 +14,8 @@ set("n", "<leader>hc", ":helpclose<CR>", { desc = "Close help window" })
 set("n", "<leader>hh", ":help ", { desc = "Open help window" })
 
 -- Normal mode buffer switching
--- set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
--- set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
+set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent dir" })
 -- vim.keymap.set("n", "<leader>of", require("oil").toggle_float, { desc = "Toggle Oil Float" })
